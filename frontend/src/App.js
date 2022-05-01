@@ -1,9 +1,11 @@
-
+import NavBar from "./components/NavBar";
+import AddStudent from "./components/AddStudent";
 function App() {
   return (
-    <div className="App">
-    <p>hellow world</p>
-    </div>
+    <>
+    <NavBar/>
+    <AddStudent/>
+    </>
   );
 }
 
