@@ -1,2 +1,10 @@
-package com.student.studentsystembackend.repository;public interface StudentRepository {
+package com.student.studentsystembackend.repository;
+
+import com.student.studentsystembackend.entity.StudentEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface StudentRepository extends JpaRepository<StudentEntity, Long > {
+
 }
