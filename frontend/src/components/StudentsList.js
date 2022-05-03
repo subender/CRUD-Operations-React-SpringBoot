@@ -7,6 +7,7 @@ const StudentsList = () => {
 
   const [isLoading, setisLoading] = useState(true)
   const [students, setStudents] = useState(null)
+  const navigate = useNavigate();
   useEffect(() => {
     
     const  fetchData= async ()=>{
@@ -27,7 +28,7 @@ const StudentsList = () => {
   }, [])
   
 
-  const navigate =  useNavigate();
+
 
   const navigateTo = ()=> navigate("/addStudent")
 
@@ -40,6 +41,10 @@ const StudentsList = () => {
             }
    } ) }
   
+   const editStudent = (id)=>{
+       
+        navigate(`/editStudent/${id}`);
+   }
 
 
   return (
@@ -105,7 +110,7 @@ const StudentsList = () => {
                             </td>
                             
                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right flex gap-5">
-                                <a href="#" className="text-indigo-600 hover:text-indigo-900 font-bold">
+                                <a href="#" className="text-indigo-600 hover:text-indigo-900 font-bold" onClick={() => editStudent(stu.id)}>
                                     Edit
                                 </a>
                                 <a href="#" className="text-indigo-600 hover:text-indigo-900 font-bold" onClick={()=>deleteStudentHandler(stu.id)}>
